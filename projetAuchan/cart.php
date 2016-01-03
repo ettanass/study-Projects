@@ -60,6 +60,10 @@ $cart = new carts($DB);
 
 
       <?php 
+      if(isset($_SESSION['cart'])){
+
+    
+    
 $session = $_SESSION['cart'];
 
 $id_products = array_keys($session);
@@ -105,13 +109,16 @@ foreach ($products as $product) {
 
  ?>  
    
- <td colspan= "100%" style="text-align:right"> prix total : <?=  number_format($cart->totalPrice(),2 ,',',' '); ?> &euro;</td> 
+ <td colspan= "100%" > <a href="cart.php?delAllProduct=1" style="float:left">Vider le panier</a> <p style="float:right">  prix total : <?=  number_format($cart->totalPrice(),2 ,',',' '); ?> &euro;</p></td> 
 
       <input type="submit"  value="Rafraichir" style="float:center"/>
     
     </table>
             
-            
+     <?php
+}
+
+ ?>        
 
           </div>
 

@@ -46,7 +46,7 @@ foreach ($products as $product) {
    <div id="products_box" >
         
               <div id='single_product' class="wrap silver">
-            <a href='details.php' id='linkProduct'>
+            <a href='details.php?id_product=<?= $product->id_product  ?>' id='linkProduct'>
             <h3><?= $product->name_product ?></h3>
             <img id="product_img" src='admin/images_products/<?= $product->image_product ?>'  height='150' />
            </a>

@@ -19,6 +19,9 @@ private $DB;
 		if(isset($_GET['cart'])){
 			$this->recalc();
 		}
+		if(isset($_GET['delAllProduct'])){
+			$this->delAllProduct();
+		}
 	}
 	public function recalc(){
 
@@ -35,6 +38,12 @@ private $DB;
 
 	public function delProduct($id_product){
 		unset($_SESSION['cart'][$id_product]);
+
+		}
+	
+	public function delAllProduct(){
+			unset($_SESSION['cart']);
+			$_SESSION['cart']=array();
 		}
 
 	public function countProducts(){
